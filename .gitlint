@@ -1,0 +1,25 @@
+# https://jorisroovers.com/gitlint/configuration/
+[general]
+ignore=body-is-missing
+ignore-merge-commits=true
+regex-style-search=True
+
+[title-max-length]
+line-length=50
+
+[title-min-length]
+min-length=3
+
+[body-max-line-length]
+line-length=79
+
+[body-min-length]
+min-length=1
+
+# Make sure that commit body contain task id at the end
+[body-match-regex]
+regex=Task: PI-\d+$
+
+# Ignore rules if it's work in progress commit
+[ignore-by-title]
+regex=^(WIP|wip)

@@ -1,0 +1,8 @@
+[flake8]
+ignore = F403, F405, W503
+exclude =
+    config,
+    .env,
+    env,
+    __init__.py
+max-line-length = 79

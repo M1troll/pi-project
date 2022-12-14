@@ -1,0 +1,38 @@
+repos:
+  # Fix imports order
+  - repo: https://github.com/pycqa/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
+
+  # Fix trailing commas
+  - repo: https://github.com/asottile/add-trailing-comma
+    rev: v2.3.0
+    hooks:
+      - id: add-trailing-comma
+
+  # Run gitlint checks
+  - repo: https://github.com/jorisroovers/gitlint
+  rev: v0.18.0
+  hooks:
+    - id: gitlint
+    - id: gitlint-ci
+      args: [-c, ignore-by-title.regex=None, --commits, origin/develop..]
+
+  # Run flake8 checks
+  - repo: https://github.com/pycqa/flake8
+  rev: 5.0.4
+  hooks:
+    - id: flake8
+      additional_dependencies:
+        - "flake8-broken-line"
+        - "flake8-quotes"
+      args: [--inline-quotes=double]
+
+  # Run pre-commit-hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-merge-conflict

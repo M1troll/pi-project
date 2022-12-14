@@ -1,0 +1,15 @@
+# Linters
+pylint
+flake8
+
+# For inv commands
+invoke
+
+# For run pre-commit hooks
+pre-commit
+
+# For sorting imports
+isort
+
+# Add production requirements
+-r product.in
